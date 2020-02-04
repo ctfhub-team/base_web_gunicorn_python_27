@@ -1,0 +1,13 @@
+#! /bin/sh
+
+if [ -f /flag.sh ];then
+    source /flag.sh
+fi
+
+if [ -f /app/requirements.txt ];then
+    pip install -r /app/requirements.txt && rm -f /app/requirements.txt
+fi
+
+echo "Running..."
+
+gunicorn --chdir="/app" -w 2 -k $WORK_CLASS -b 0.0.0.0:80 -u nobody -g nogroup --access-logfile - $MODULE_NAME:$VARIABLE_NAME

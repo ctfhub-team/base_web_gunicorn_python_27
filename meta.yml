@@ -1,0 +1,7 @@
+name: base_web_gunicron_python_27
+title: 基础镜像 WEB Gunicron python 2.7
+desc: 基础镜像 WEB Gunicron python 2.7
+tags:
+  - web
+  - python
+  - gunicron
